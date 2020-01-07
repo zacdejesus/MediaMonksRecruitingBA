@@ -19,7 +19,7 @@ struct ResourceManager {
     
     let baseURL = "https://jsonplaceholder.typicode.com/posts/1"
     
-    func getResource(for resource: String) {
+    func getResource() {
         
         if let url = URL(string: baseURL) {
             
@@ -47,7 +47,7 @@ struct ResourceManager {
         do {
             let decodedData = try decoder.decode(ResourceModel.self, from: data)
             let lastResource = decodedData.title
-            print(lastResource)
+            print("QQQ\(lastResource)")
             return lastResource
             
         } catch {

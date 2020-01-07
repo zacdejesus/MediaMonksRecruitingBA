@@ -35,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1935613523C2B7FD0001D969 /* MediaMocksChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MediaMocksChallenge.app; path = "/Users/z/Desktop/mediaMonksSwift/MediaMocksChallenge/build/Debug-iphoneos/MediaMocksChallenge.app"; sourceTree = "<absolute>"; };
 		1935613823C2B7FE0001D969 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1935613A23C2B7FE0001D969 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1935613C23C2B7FE0001D969 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,10 +42,11 @@
 		1935614123C2B8050001D969 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1935614423C2B8050001D969 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1935614623C2B8050001D969 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1935614B23C2B8060001D969 /* MediaMocksChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMocksChallengeTests.xctest; path = "/Users/z/Desktop/mediaMonksSwift/MediaMocksChallenge/build/Debug-iphoneos/MediaMocksChallengeTests.xctest"; sourceTree = "<absolute>"; };
-		1935615623C2B8060001D969 /* MediaMocksChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMocksChallengeUITests.xctest; path = "/Users/z/Desktop/mediaMonksSwift/MediaMocksChallenge/build/Debug-iphoneos/MediaMocksChallengeUITests.xctest"; sourceTree = "<absolute>"; };
 		1935616823C2C8A90001D969 /* ResourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceModel.swift; sourceTree = "<group>"; };
 		1935616E23C3A8C40001D969 /* ResourceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceManager.swift; sourceTree = "<group>"; };
+		19C15B7B23C3E51D00127B34 /* MediaMocksChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaMocksChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C15B7C23C3E51D00127B34 /* MediaMocksChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMocksChallengeTests.xctest; path = "/Users/z/Desktop/MediaMonksRecruitingBA/MediaMocksChallenge/build/Debug-iphoneos/MediaMocksChallengeTests.xctest"; sourceTree = "<absolute>"; };
+		19C15B7D23C3E51D00127B34 /* MediaMocksChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MediaMocksChallengeUITests.xctest; path = "/Users/z/Desktop/MediaMonksRecruitingBA/MediaMocksChallenge/build/Debug-iphoneos/MediaMocksChallengeUITests.xctest"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				1935613723C2B7FD0001D969 /* MediaMocksChallenge */,
+				19C15B7B23C3E51D00127B34 /* MediaMocksChallenge.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,7 +139,7 @@
 			);
 			name = MediaMocksChallenge;
 			productName = MediaMocksChallenge;
-			productReference = 1935613523C2B7FD0001D969 /* MediaMocksChallenge.app */;
+			productReference = 19C15B7B23C3E51D00127B34 /* MediaMocksChallenge.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1935614A23C2B8060001D969 /* MediaMocksChallengeTests */ = {
@@ -156,7 +157,7 @@
 			);
 			name = MediaMocksChallengeTests;
 			productName = MediaMocksChallengeTests;
-			productReference = 1935614B23C2B8060001D969 /* MediaMocksChallengeTests.xctest */;
+			productReference = 19C15B7C23C3E51D00127B34 /* MediaMocksChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1935615523C2B8060001D969 /* MediaMocksChallengeUITests */ = {
@@ -174,7 +175,7 @@
 			);
 			name = MediaMocksChallengeUITests;
 			productName = MediaMocksChallengeUITests;
-			productReference = 1935615623C2B8060001D969 /* MediaMocksChallengeUITests.xctest */;
+			productReference = 19C15B7D23C3E51D00127B34 /* MediaMocksChallengeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
