@@ -9,7 +9,5 @@
 import Foundation
 
 struct ResourceModel: Decodable {
-    let id: String
     let title: String
-    let body: String
 }

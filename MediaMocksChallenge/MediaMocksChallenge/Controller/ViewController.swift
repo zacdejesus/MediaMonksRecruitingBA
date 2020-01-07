@@ -7,39 +7,31 @@
 //
 
 import UIKit
-import Foundation
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var imageContainer: UIImageView!
- 
+        
     var resourceManager = ResourceManager()
-    
-
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            resourceManager.delegate = self
+        }
 
     @IBAction func button(_ sender: UIButton) {
-
-        print("fsdfsd")
-        getResource()
-     func didUpdateResource(title: String) {
+        resourceManager.getResource()
+        func didUpdateResource(title: String) {
             
             DispatchQueue.main.async {
                 self.Label.text = title
             }
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        resourceManager.delegate = self
-    }
-
 }
     
-
-
-
 extension ViewController: ResourceManagerDelegate {
     func didUpdateResource(title: String) {
         

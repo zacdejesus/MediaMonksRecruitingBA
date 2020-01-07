@@ -10,51 +10,50 @@ import Foundation
 
 protocol ResourceManagerDelegate {
     func didUpdateResource(title: String)
-    func didFailWithError(error: Error)
 }
 
 struct ResourceManager {
     
     var delegate: ResourceManagerDelegate?
-    
     let baseURL = "https://jsonplaceholder.typicode.com/posts/1"
-    
-    func getResource() {
-        
+       
+    func getResource() {        
         if let url = URL(string: baseURL) {
-            
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
                 if error != nil {
-                    self.delegate?.didFailWithError(error: error!)
+                    print("Error en llamada a API")
                     return
                 }
                 
                 if let safeData = data {
-                    if let Resource = self.parseJSON(safeData) {
-                        let resourceString = String(format: "%.2f", Resource)
-                        self.delegate?.didUpdateResource(title: resourceString)
+                    if let lastResource = self.parseJSON(safeData) {
+                        print("final\(lastResource)")
+                        let resource = String(lastResource)
+                        self.delegate?.didUpdateResource(title: resource)
+                        print("ACA\(resource)")
                     }
                 }
             }
             task.resume()
         }
     }
-    
-    func parseJSON(_ data: Data) -> String? {
+
+    func parseJSON(_ safeData: Data) -> String? {
         
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(ResourceModel.self, from: data)
+            let decodedData = try decoder.decode(ResourceModel.self, from: safeData)
             let lastResource = decodedData.title
-            print("QQQ\(lastResource)")
+            print("Decoded->\(lastResource)")
             return lastResource
             
         } catch {
-            delegate?.didFailWithError(error: error)
+            print("cannot decode data")
             return nil
         }
-    }
+    
     
 }
 
+}
