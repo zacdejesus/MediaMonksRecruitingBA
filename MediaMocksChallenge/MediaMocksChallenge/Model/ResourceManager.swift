@@ -15,7 +15,7 @@ protocol ResourceManagerDelegate {
 struct ResourceManager {
     
     var delegate: ResourceManagerDelegate?
-    
+    //call to API
     let baseURL = "https://jsonplaceholder.typicode.com/albums"
        
     func getResource() {        
@@ -37,11 +37,10 @@ struct ResourceManager {
             task.resume()
         }
     }
-
+    //Parsing JSON
     func parseJSON(_ safeData: Data) -> [String]? {
         var i = 1
         var arrayName = [String]()
-
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResourceModel.self, from: safeData)
@@ -50,7 +49,6 @@ struct ResourceManager {
                 arrayName.append(titleDecoded)
                 i = i + 1
             }
-            print(arrayName)
             return arrayName
         } catch {
             print("cannot decode data")
