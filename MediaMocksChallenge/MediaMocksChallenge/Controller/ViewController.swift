@@ -17,26 +17,25 @@ class ViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            
             resourceManager.delegate = self
         }
 
     @IBAction func button(_ sender: UIButton) {
         resourceManager.getResource()
-        func didUpdateResource(title: String) {
+        func didUpdateResource(title: [ResourceModelElement]) {
             
             DispatchQueue.main.async {
-                self.Label.text = title
+                self.Label.text = String(title.count)
             }
         }
     }
 }
     
 extension ViewController: ResourceManagerDelegate {
-    func didUpdateResource(title: String) {
+    func didUpdateResource(title: [ResourceModelElement]) {
         
         DispatchQueue.main.async {
-            self.Label.text = title
+            self.Label.text = String(title.count)
         }
     }
     
@@ -44,3 +43,18 @@ extension ViewController: ResourceManagerDelegate {
         print(error)
     }
 }
+
+//extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+//    
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//          return 1
+//      }
+//      
+//      func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return title!.count
+//      }
+//      
+//      func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//          return title![row]
+//      }
+//}

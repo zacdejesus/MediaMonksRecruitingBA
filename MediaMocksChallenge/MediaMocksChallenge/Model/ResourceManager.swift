@@ -9,13 +9,13 @@
 import Foundation
 
 protocol ResourceManagerDelegate {
-    func didUpdateResource(title: String)
+    func didUpdateResource(title: [ResourceModelElement])
 }
 
 struct ResourceManager {
     
     var delegate: ResourceManagerDelegate?
-    let baseURL = "https://jsonplaceholder.typicode.com/posts/1"
+    let baseURL = "https://jsonplaceholder.typicode.com/albums"
        
     func getResource() {        
         if let url = URL(string: baseURL) {
@@ -28,8 +28,7 @@ struct ResourceManager {
                 
                 if let safeData = data {
                     if let lastResource = self.parseJSON(safeData) {
-                        print("final\(lastResource)")
-                        let resource = String(lastResource)
+                        let resource = lastResource
                         self.delegate?.didUpdateResource(title: resource)
                         print("ACA\(resource)")
                     }
@@ -39,14 +38,15 @@ struct ResourceManager {
         }
     }
 
-    func parseJSON(_ safeData: Data) -> String? {
+    func parseJSON(_ safeData: Data) -> [ResourceModelElement]? {
         
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ResourceModel.self, from: safeData)
-            let lastResource = decodedData.title
-            print("Decoded->\(lastResource)")
-            return lastResource
+            //let titleDecoded = [ResourceModel.title]
+            //let cosa = ResourceModelElement.title
+            print("Decoded->\(decodedData)")
+            return decodedData
             
         } catch {
             print("cannot decode data")

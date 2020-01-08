@@ -8,6 +8,13 @@
 
 import Foundation
 
-struct ResourceModel: Decodable {
-    let title: String
-}
+struct ResourceModelElement: Decodable {
+        let userID, id: Int
+        let title: String
+
+        enum CodingKeys: String, CodingKey {
+            case userID = "userId"
+            case id, title
+        }
+    }
+typealias ResourceModel = [ResourceModelElement]
